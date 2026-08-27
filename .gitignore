@@ -1,0 +1,35 @@
+# Lakebed local state and generated artifacts
+.lakebed/
+.env.lakebed.server
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# JavaScript / TypeScript dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Package-manager and runtime logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Editor settings and temporary files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
