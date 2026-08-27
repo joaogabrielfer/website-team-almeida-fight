@@ -9,9 +9,11 @@ import { PHONE_DISPLAY, WHATSAPP_URL } from "../data/site";
 import { usePageMeta } from "../hooks/usePageMeta";
 
 const schedule = [
-  { day: "Segunda e quarta", time: "06h · 12h · 18h · 20h", className: "Boxe e Jiu-Jitsu" },
-  { day: "Terça e quinta", time: "06h · 12h · 18h · 20h", className: "Muay Thai e MMA" },
-  { day: "Sexta e sábado", time: "07h · 10h · 19h", className: "Treino técnico e open mat" },
+  {
+    day: "Segunda, quarta e sexta",
+    classes: ["10h · Muay Thai (manhã)", "11h30 · MMA", "17h30 · Muay Thai (tarde)"],
+  },
+  { day: "Terça e quinta", classes: ["19h · Muay Thai (noite)"] },
 ] as const;
 
 export function HomePage() {
@@ -148,17 +150,18 @@ export function HomePage() {
                   Hora de entrar em ação
                 </h2>
                 <p className="mt-6 max-w-md text-sm font-medium leading-6 text-[#0d0d0d]/65">
-                  Consulte a equipe para confirmar turmas, níveis e disponibilidade antes da primeira aula.
+                  Horários de Muay Thai e MMA. Consulte a equipe para confirmar turmas, níveis e disponibilidade antes da primeira aula.
                 </p>
               </div>
               <div className="border-t-2 border-[#0d0d0d]">
                 {schedule.map((item) => (
-                  <div className="grid gap-2 border-b border-[#0d0d0d]/25 py-6 sm:grid-cols-[1fr_1fr] sm:items-center" key={item.day}>
-                    <div>
-                      <strong className="block font-['Teko'] text-2xl uppercase leading-none">{item.day}</strong>
-                      <span className="mt-1 block text-xs font-bold uppercase tracking-wider text-[#0d0d0d]/55">{item.className}</span>
+                  <div className="grid gap-4 border-b border-[#0d0d0d]/25 py-6 sm:grid-cols-[0.9fr_1.1fr] sm:items-start" key={item.day}>
+                    <strong className="font-['Teko'] text-2xl uppercase leading-none">{item.day}</strong>
+                    <div className="grid gap-2 sm:text-right">
+                      {item.classes.map((training) => (
+                        <span className="text-xs font-bold uppercase tracking-wider text-[#0d0d0d]/70" key={training}>{training}</span>
+                      ))}
                     </div>
-                    <span className="font-['Teko'] text-2xl font-semibold sm:text-right">{item.time}</span>
                   </div>
                 ))}
               </div>
