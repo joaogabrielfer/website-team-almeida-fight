@@ -1,0 +1,37 @@
+name: Deploy to Lakebed
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lakebed-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy production capsule
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Verify Lakebed credential
+        env:
+          LAKEBED_TOKEN: ${{ secrets.LAKEBED_TOKEN }}
+        run: |
+          if [ -z "$LAKEBED_TOKEN" ]; then
+            echo "::error::Add a LAKEBED_TOKEN repository secret before deploying. Create it with: npx lakebed token create --name github-actions"
+            exit 1
+          fi
+
+      - name: Deploy to Lakebed
+        env:
+          LAKEBED_TOKEN: ${{ secrets.LAKEBED_TOKEN }}
+        run: npx --yes lakebed@0.0.29 deploy . --json

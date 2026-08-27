@@ -3,6 +3,7 @@ import { PageLayout } from "../components/PageLayout";
 import { SectionHeading } from "../components/SectionHeading";
 import { StoreShowcase } from "../components/StoreShowcase";
 import { TrainingGallery } from "../components/TrainingGallery";
+import { TEAM_ALMEIDA_FIGHT_EMBLEM_DATA_URL } from "../data/emblem";
 import { modalities } from "../data/modalities";
 import { PHONE_DISPLAY, WHATSAPP_URL } from "../data/site";
 import { usePageMeta } from "../hooks/usePageMeta";
@@ -34,40 +35,51 @@ export function HomePage() {
           </div>
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8">
-            <div className="max-w-5xl">
-              <div className="mb-7 flex items-center gap-4">
-                <span className="h-px w-10 bg-[#d4af37] sm:w-16" />
-                <p className="text-[0.64rem] font-black uppercase tracking-[0.22em] text-[#d4af37] sm:text-xs">
-                  Centro de treinamento Almeida Fight
+            <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto] lg:gap-16">
+              <div className="max-w-5xl">
+                <div className="mb-7 flex items-center gap-4">
+                  <span className="h-px w-10 bg-[#d4af37] sm:w-16" />
+                  <p className="text-[0.64rem] font-black uppercase tracking-[0.22em] text-[#d4af37] sm:text-xs">
+                    Centro de treinamento Almeida Fight
+                  </p>
+                </div>
+
+                <h1 className="font-['Teko'] text-[clamp(3.8rem,11vw,9.5rem)] font-bold uppercase leading-[0.76] tracking-[-0.035em] text-white">
+                  Disciplina <span className="text-[#d4af37]">•</span> Foco <span className="text-[#d4af37]">•</span>
+                  <br />
+                  Respeito <span className="text-[#d4af37]">•</span> Superação
+                </h1>
+
+                <p className="mt-8 max-w-2xl text-sm font-bold uppercase leading-6 tracking-[0.12em] text-white/65 sm:text-base sm:leading-7">
+                  A verdadeira academia de combate premia os fortes
                 </p>
+
+                <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                  <a
+                    className="inline-flex min-h-14 items-center justify-center gap-3 bg-[#d4af37] px-7 text-xs font-black uppercase tracking-[0.15em] text-[#0d0d0d] transition-colors hover:bg-[#f3e5ab] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f3e5ab]"
+                    href={WHATSAPP_URL}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Agende sua aula
+                    <span aria-hidden="true" className="text-lg">→</span>
+                  </a>
+                  <a
+                    className="inline-flex min-h-14 items-center justify-center border border-white/25 px-7 text-xs font-black uppercase tracking-[0.15em] text-white transition-colors hover:border-[#d4af37] hover:text-[#d4af37] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d4af37]"
+                    href="#modalidades"
+                  >
+                    Ver modalidades
+                  </a>
+                </div>
               </div>
 
-              <h1 className="font-['Teko'] text-[clamp(3.8rem,11vw,9.5rem)] font-bold uppercase leading-[0.76] tracking-[-0.035em] text-white">
-                Disciplina <span className="text-[#d4af37]">•</span> Foco <span className="text-[#d4af37]">•</span>
-                <br />
-                Respeito <span className="text-[#d4af37]">•</span> Superação
-              </h1>
-
-              <p className="mt-8 max-w-2xl text-sm font-bold uppercase leading-6 tracking-[0.12em] text-white/65 sm:text-base sm:leading-7">
-                A verdadeira academia de combate premia os fortes
-              </p>
-
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <a
-                  className="inline-flex min-h-14 items-center justify-center gap-3 bg-[#d4af37] px-7 text-xs font-black uppercase tracking-[0.15em] text-[#0d0d0d] transition-colors hover:bg-[#f3e5ab] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f3e5ab]"
-                  href={WHATSAPP_URL}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  Agende sua aula
-                  <span aria-hidden="true" className="text-lg">→</span>
-                </a>
-                <a
-                  className="inline-flex min-h-14 items-center justify-center border border-white/25 px-7 text-xs font-black uppercase tracking-[0.15em] text-white transition-colors hover:border-[#d4af37] hover:text-[#d4af37] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d4af37]"
-                  href="#modalidades"
-                >
-                  Ver modalidades
-                </a>
+              <div className="pointer-events-none relative mx-auto hidden w-[min(29vw,25rem)] shrink-0 lg:block">
+                <div className="absolute inset-[10%] rounded-full bg-[#d4af37]/20 blur-3xl" />
+                <img
+                  alt="Emblema Team Almeida Fight"
+                  className="relative w-full rounded-full border border-[#d4af37]/45 bg-[#080808] p-2 shadow-[0_24px_80px_rgba(0,0,0,0.55)]"
+                  src={TEAM_ALMEIDA_FIGHT_EMBLEM_DATA_URL}
+                />
               </div>
             </div>
           </div>
