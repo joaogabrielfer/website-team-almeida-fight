@@ -38,25 +38,45 @@ export function ModalityPage({ modality }: { modality: Modality }) {
         </section>
 
         <section className="border-y border-white/5 bg-[#111111] py-20 sm:py-28">
-          <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-            <article className="border-t-4 border-[#d4af37] bg-[#171717] p-8 shadow-[0_24px_70px_rgba(0,0,0,0.3)] sm:p-10">
-              <p className="text-[0.65rem] font-black uppercase tracking-[0.25em] text-[#d4af37]">Instrutor principal</p>
-              <div className="mt-9 flex h-24 w-24 items-center justify-center rounded-full border border-[#d4af37]/40 bg-[#0d0d0d] font-['Teko'] text-4xl font-bold text-[#d4af37]">
-                {modality.instructor.split(" ").map((name) => name[0]).slice(0, 2).join("")}
+          <div className="mx-auto max-w-7xl px-5 sm:px-8">
+            <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:gap-20">
+              <div>
+                <p className="text-[0.65rem] font-black uppercase tracking-[0.25em] text-[#d4af37]">Quem conduz o treino</p>
+                <h2 className="mt-4 font-['Teko'] text-[clamp(3rem,7vw,5.5rem)] font-bold uppercase leading-[0.88]">Professores da modalidade</h2>
               </div>
-              <h2 className="mt-7 font-['Teko'] text-5xl font-bold uppercase leading-none">{modality.instructor}</h2>
-              <p className="mt-3 text-sm font-bold uppercase tracking-[0.14em] text-white/35">Academia Almeida Fight</p>
-            </article>
 
-            <div className="lg:pt-5">
-              <p className="text-[0.65rem] font-black uppercase tracking-[0.25em] text-[#d4af37]">O treinamento</p>
-              <h2 className="mt-4 font-['Teko'] text-[clamp(3rem,7vw,5.5rem)] font-bold uppercase leading-[0.88]">Construa sua melhor versão</h2>
-              <p className="mt-7 max-w-2xl text-lg leading-8 text-white/65">{modality.summary}</p>
-              <div className="mt-9 border-l-2 border-[#d4af37] pl-6 sm:pl-8">
-                <p className="text-base font-bold leading-7 text-white sm:text-lg sm:leading-8">{modality.focus}</p>
+              <div className={`order-2 grid gap-5 ${modality.instructors.length > 1 ? "md:grid-cols-2 xl:grid-cols-3" : "max-w-md"} lg:col-span-2`}>
+                {modality.instructors.map((instructor) => (
+                  <article className="group overflow-hidden border border-white/10 bg-[#171717]" key={instructor.name}>
+                    <div className="relative aspect-[4/5] overflow-hidden bg-[#111111]">
+                      <img
+                        alt={`Professor ${instructor.name}, ${instructor.specialty}`}
+                        className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.025]"
+                        loading="lazy"
+                        src={instructor.image}
+                      />
+                      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#111111] to-transparent" />
+                    </div>
+                    <div className="border-t-2 border-[#d4af37] p-6">
+                      <p className="text-[0.6rem] font-black uppercase tracking-[0.2em] text-[#d4af37]">{instructor.specialty}</p>
+                      <h3 className="mt-2 font-['Teko'] text-4xl font-bold uppercase leading-none text-white">{instructor.name}</h3>
+                      <p className="mt-4 border-t border-white/10 pt-4 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-white/50">{instructor.schedule}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+
+              <div className="order-3 lg:order-none">
+                <p className="text-[0.65rem] font-black uppercase tracking-[0.25em] text-[#d4af37]">O treinamento</p>
+                <h2 className="mt-4 font-['Teko'] text-[clamp(3rem,7vw,5.5rem)] font-bold uppercase leading-[0.88]">Construa sua melhor versão</h2>
+                <p className="mt-7 max-w-2xl text-lg leading-8 text-white/65">{modality.summary}</p>
+                <div className="mt-9 border-l-2 border-[#d4af37] pl-6 sm:pl-8">
+                  <p className="text-base font-bold leading-7 text-white sm:text-lg sm:leading-8">{modality.focus}</p>
+                </div>
               </div>
             </div>
           </div>
+
         </section>
 
         <section className="py-20 sm:py-28">
