@@ -4,7 +4,7 @@ import { INSTRUCTOR_IMAGES } from "./instructorImages";
 const thiagoAlmeida: Instructor = {
   name: "Thiago Almeida",
   specialty: "Muay Thai + Kickboxing · MMA",
-  schedule: "Muay Thai: seg., qua. e sex. · 10h e 17h30; ter. e qui. · 19h · MMA: seg., qua. e sex. · 11h30",
+  schedule: "Muay Thai + Kickboxing: seg., qua. e sex. · 8h, 10h, 15h (exclusivo) e 17h30; ter. e qui. · 19h e 20h · MMA: seg., qua. e sex. · 11h; ter. e qui. · 10h e 20h",
   image: INSTRUCTOR_IMAGES.thiagoAlmeida,
   achievements: [
     "5x campeão de Muay Thai",
@@ -91,7 +91,7 @@ export const modalities: readonly Modality[] = [
       {
         ...thiagoAlmeida,
         specialty: "Muay Thai + Kickboxing",
-        schedule: "Segunda, quarta e sexta · 10h e 17h30 · Terça e quinta · 19h",
+        schedule: "Segunda, quarta e sexta · 8h, 10h, 15h (exclusivo) e 17h30 · Terça e quinta · 19h e 20h",
       },
     ],
     summary:
@@ -112,7 +112,7 @@ export const modalities: readonly Modality[] = [
       {
         ...thiagoAlmeida,
         specialty: "MMA",
-        schedule: "Segunda, quarta e sexta · 11h30",
+        schedule: "Segunda, quarta e sexta · 11h · Terça e quinta · 10h e 20h",
       },
     ],
     summary:

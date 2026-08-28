@@ -13,7 +13,6 @@ export function ProfessionalCard({ index, professional }: ProfessionalCardProps)
   const [open, setOpen] = useState(false);
   const [tilt, setTilt] = useState(restingTilt);
 
-  const scale = tilt.hovering ? 1.012 : 1;
   const tabletAlignment = index % 2 === 0 ? "sm:justify-self-start" : "sm:justify-self-end";
   const desktopColumn = index % 3;
   const desktopAlignment = desktopColumn === 0
@@ -43,12 +42,10 @@ export function ProfessionalCard({ index, professional }: ProfessionalCardProps)
         "--professional-card-width": open ? "36rem" : "20rem",
         transform: open
           ? "translateY(-10px)"
-          : `scale(${scale})`,
+          : "translateY(0)",
         transformOrigin: "center",
         filter: open ? "drop-shadow(0 32px 30px rgba(0, 0, 0, 0.82))" : "none",
-        transition: open
-          ? "transform 600ms cubic-bezier(0.16, 1, 0.3, 1), width 600ms cubic-bezier(0.16, 1, 0.3, 1), max-width 600ms cubic-bezier(0.16, 1, 0.3, 1), border-color 450ms ease, box-shadow 600ms ease, filter 600ms ease"
-          : `transform ${tilt.hovering ? "180ms ease-out" : "600ms cubic-bezier(0.16, 1, 0.3, 1)"}, width 600ms cubic-bezier(0.16, 1, 0.3, 1), max-width 600ms cubic-bezier(0.16, 1, 0.3, 1), border-color 450ms ease, box-shadow 600ms ease, filter 600ms ease`,
+        transition: "transform 600ms cubic-bezier(0.16, 1, 0.3, 1), width 600ms cubic-bezier(0.16, 1, 0.3, 1), max-width 600ms cubic-bezier(0.16, 1, 0.3, 1), border-color 450ms ease, box-shadow 600ms ease, filter 600ms ease",
       }}
     >
       <div

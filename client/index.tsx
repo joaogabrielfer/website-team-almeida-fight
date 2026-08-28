@@ -1,7 +1,7 @@
 import { Route, Router, Routes } from "lakebed/client";
 import { useEffect } from "preact/hooks";
 
-import { FAVICON_DATA_URL } from "./data/favicon";
+import { FAVICON_DATA_URL, FAVICON_TYPE } from "./data/favicon";
 import { getModality } from "./data/modalities";
 import { HomePage } from "./pages/HomePage";
 import { ModalityPage } from "./pages/ModalityPage";
@@ -31,7 +31,7 @@ function GlobalBrowserSetup() {
       const favicon = document.createElement("link");
       favicon.id = faviconId;
       favicon.rel = "icon";
-      favicon.type = "image/svg+xml";
+      favicon.type = FAVICON_TYPE;
       favicon.href = FAVICON_DATA_URL;
       document.head.appendChild(favicon);
     }

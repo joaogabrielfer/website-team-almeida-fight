@@ -13,29 +13,29 @@ const schedule = [
   {
     modality: "Muay Thai + Kickboxing",
     classes: [
-      { days: "Segunda, quarta e sexta", time: "10h e 17h30", instructor: null },
-      { days: "Terça e quinta", time: "19h", instructor: null },
+      { days: "Segunda, quarta e sexta", times: ["08h", "10h", "15h"], exclusiveTime: "15h", instructor: null },
+      { days: "Terça e quinta", times: ["19h", "20h"], exclusiveTime: null, instructor: null },
     ],
   },
   {
     modality: "MMA",
     classes: [
-      { days: "Segunda, quarta e sexta", time: "11h30", instructor: null },
+      { days: "Segunda, quarta e sexta", times: ["11h"], exclusiveTime: null, instructor: null },
+      { days: "Terça e quinta", times: ["10h", "20h"], exclusiveTime: null, instructor: null },
     ],
   },
   {
     modality: "Jiu-Jitsu",
     classes: [
-      { days: "Segunda, quarta e sexta", time: "07h e 16h", instructor: "William Gomes" },
-      { days: "Segunda, quarta e sexta", time: "20h", instructor: "Ítalo Feijó" },
-      { days: "Terça e quinta", time: "08h e 16h", instructor: "Caio Henrique" },
+      { days: "Segunda, quarta e sexta", times: ["07h", "16h", "20h"], exclusiveTime: null, instructor: null },
+      { days: "Terça e quinta", times: ["08h", "16h"], exclusiveTime: null, instructor: null },
     ],
   },
   {
     modality: "Boxe",
     classes: [
-      { days: "Segunda, quarta e sexta", time: "19h", instructor: "Ismael Ninja" },
-      { days: "Terça e quinta", time: "15h", instructor: "Cesar Augusto" },
+      { days: "Segunda, quarta e sexta", times: ["19h"], exclusiveTime: null, instructor: null },
+      { days: "Terça e quinta", times: ["15h"], exclusiveTime: null, instructor: null },
     ],
   },
 ] as const;
@@ -122,8 +122,9 @@ export function HomePage() {
                       {INSTAGRAM_HANDLE}
                     </span>
                   </a>
-                  <span className="flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center rounded-full border border-[#d4af37]/55 bg-[#0b0b0b]/90 p-2 text-center font-['Teko'] text-sm font-bold uppercase leading-[0.82] tracking-[0.04em] text-[#e5c44f] shadow-[0_10px_24px_rgba(0,0,0,0.48)]">
-                    O melhor<br />da cidade
+                  <span className="flex h-20 w-20 shrink-0 flex-col items-center justify-center rounded-full border border-[#d4af37]/55 bg-[#0b0b0b]/90 px-1 text-center font-['Teko'] text-[0.72rem] font-bold uppercase leading-[0.88] tracking-[0.03em] text-[#e5c44f] shadow-[0_10px_24px_rgba(0,0,0,0.48)]">
+                    <span>A melhor</span>
+                    <span>da cidade</span>
                   </span>
                 </div>
 
@@ -239,17 +240,57 @@ export function HomePage() {
                       {item.classes.map((training) => (
                         <div
                           className="grid gap-1 border-l-2 border-[#0d0d0d]/20 pl-4 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-5"
-                          key={`${training.days}-${training.time}-${training.instructor ?? ""}`}
+                          key={`${training.days}-${training.times.join("-")}-${training.instructor ?? ""}`}
                         >
                           <span className="text-[0.68rem] font-bold uppercase leading-5 tracking-wider text-[#0d0d0d]/65">
                             {training.days}{training.instructor ? ` · ${training.instructor}` : ""}
                           </span>
-                          <strong className="font-['Teko'] text-2xl uppercase leading-none">{training.time}</strong>
+                          <div className="flex flex-wrap gap-2 sm:justify-end">
+                            {training.times.map((time) => {
+                              const exclusive = training.exclusiveTime === time;
+
+                              return (
+                                <strong
+                                  className={`inline-flex items-center gap-1 rounded-full border px-3 py-1 font-['Teko'] text-xl uppercase leading-none ${exclusive ? "border-[#0d0d0d] bg-[#0d0d0d] text-[#f3e5ab]" : "border-[#0d0d0d]/25 bg-[#f3e5ab]/30"}`}
+                                  key={time}
+                                >
+                                  {time}
+                                  {exclusive && <span className="font-sans text-[0.52rem] font-black tracking-[0.08em]">EXCLUSIVO</span>}
+                                </strong>
+                              );
+                            })}
+                          </div>
                         </div>
                       ))}
                     </div>
                   </article>
                 ))}
+              </div>
+            </div>
+
+            <div className="mt-14 grid gap-px border-t-2 border-[#0d0d0d] bg-[#0d0d0d]/25 lg:grid-cols-[1.1fr_0.9fr]">
+              <div className="bg-[#d4af37] py-8 pr-5 sm:py-10 lg:pr-12">
+                <p className="text-[0.67rem] font-black uppercase tracking-[0.25em] text-[#0d0d0d]/65">Plano de treino</p>
+                <h3 className="mt-3 font-['Teko'] text-4xl font-bold uppercase leading-none sm:text-5xl">Treine sem limites</h3>
+                <p className="mt-5 max-w-xl text-base font-bold leading-7 text-[#0d0d0d]/75 sm:text-lg">
+                  Escolheu a modalidade? Treine quantas vezes quiser por dia e quantas vezes quiser na semana.
+                </p>
+              </div>
+              <div className="grid gap-px bg-[#0d0d0d]/25 sm:grid-cols-2">
+                <div className="bg-[#d4af37] px-5 py-8 sm:px-7 sm:py-10">
+                  <p className="text-[0.62rem] font-black uppercase tracking-[0.2em] text-[#0d0d0d]/60">01 modalidade</p>
+                  <p className="mt-3 font-['Teko'] text-5xl font-bold leading-none">R$ 100</p>
+                  <p className="mt-1 text-[0.62rem] font-black uppercase tracking-[0.16em] text-[#0d0d0d]/60">por mês</p>
+                </div>
+                <div className="bg-[#d4af37] px-5 py-8 sm:px-7 sm:py-10">
+                  <p className="text-[0.62rem] font-black uppercase tracking-[0.2em] text-[#0d0d0d]/60">02 modalidades</p>
+                  <p className="mt-3 font-['Teko'] text-5xl font-bold leading-none">R$ 180</p>
+                  <p className="mt-1 text-[0.62rem] font-black uppercase tracking-[0.16em] text-[#0d0d0d]/60">por mês</p>
+                </div>
+                <div className="bg-[#0d0d0d] px-5 py-5 text-[#f3e5ab] sm:col-span-2 sm:px-7">
+                  <p className="text-[0.62rem] font-black uppercase tracking-[0.18em] text-[#d4af37]">Horários exclusivos</p>
+                  <p className="mt-2 text-sm font-bold leading-6">Acréscimo de R$ 30 por mês para a turma exclusiva.</p>
+                </div>
               </div>
             </div>
           </div>

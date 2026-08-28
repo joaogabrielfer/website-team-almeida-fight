@@ -44,7 +44,29 @@ export function ModalityPage({ modality }: { modality: Modality }) {
                 <p className="text-[0.65rem] font-black uppercase tracking-[0.25em] text-[#d4af37]">Quem conduz o treino</p>
                 <h2 className="mt-4 font-['Teko'] text-[clamp(3rem,7vw,5.5rem)] font-bold uppercase leading-[0.88]">Professores da modalidade</h2>
               </div>
-              <div>
+
+              <div className={`order-2 grid gap-5 ${modality.instructors.length > 1 ? "md:grid-cols-2 xl:grid-cols-3" : "max-w-md"} lg:col-span-2`}>
+                {modality.instructors.map((instructor) => (
+                  <article className="group overflow-hidden border border-white/10 bg-[#171717]" key={instructor.name}>
+                    <div className="relative aspect-[4/5] overflow-hidden bg-[#111111]">
+                      <img
+                        alt={`Professor ${instructor.name}, ${instructor.specialty}`}
+                        className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.025]"
+                        loading="lazy"
+                        src={instructor.image}
+                      />
+                      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#111111] to-transparent" />
+                    </div>
+                    <div className="border-t-2 border-[#d4af37] p-6">
+                      <p className="text-[0.6rem] font-black uppercase tracking-[0.2em] text-[#d4af37]">{instructor.specialty}</p>
+                      <h3 className="mt-2 font-['Teko'] text-4xl font-bold uppercase leading-none text-white">{instructor.name}</h3>
+                      <p className="mt-4 border-t border-white/10 pt-4 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-white/50">{instructor.schedule}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+
+              <div className="order-3 lg:order-none">
                 <p className="text-[0.65rem] font-black uppercase tracking-[0.25em] text-[#d4af37]">O treinamento</p>
                 <h2 className="mt-4 font-['Teko'] text-[clamp(3rem,7vw,5.5rem)] font-bold uppercase leading-[0.88]">Construa sua melhor versão</h2>
                 <p className="mt-7 max-w-2xl text-lg leading-8 text-white/65">{modality.summary}</p>
@@ -52,27 +74,6 @@ export function ModalityPage({ modality }: { modality: Modality }) {
                   <p className="text-base font-bold leading-7 text-white sm:text-lg sm:leading-8">{modality.focus}</p>
                 </div>
               </div>
-            </div>
-
-            <div className={`mt-12 grid gap-5 ${modality.instructors.length > 1 ? "md:grid-cols-2 xl:grid-cols-3" : "max-w-md"}`}>
-              {modality.instructors.map((instructor) => (
-                <article className="group overflow-hidden border border-white/10 bg-[#171717]" key={instructor.name}>
-                  <div className="relative aspect-[4/5] overflow-hidden bg-[#111111]">
-                    <img
-                      alt={`Professor ${instructor.name}, ${instructor.specialty}`}
-                      className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.025]"
-                      loading="lazy"
-                      src={instructor.image}
-                    />
-                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#111111] to-transparent" />
-                  </div>
-                  <div className="border-t-2 border-[#d4af37] p-6">
-                    <p className="text-[0.6rem] font-black uppercase tracking-[0.2em] text-[#d4af37]">{instructor.specialty}</p>
-                    <h3 className="mt-2 font-['Teko'] text-4xl font-bold uppercase leading-none text-white">{instructor.name}</h3>
-                    <p className="mt-4 border-t border-white/10 pt-4 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-white/50">{instructor.schedule}</p>
-                  </div>
-                </article>
-              ))}
             </div>
           </div>
 
