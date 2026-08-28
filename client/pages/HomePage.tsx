@@ -109,20 +109,20 @@ export function HomePage() {
                   A verdadeira academia de combate premia os fortes
                 </p>
 
-                <div className="mt-5 flex flex-wrap items-center gap-3">
+                <div className="mt-5 flex flex-nowrap items-center gap-2 sm:flex-wrap sm:gap-3">
                   <a
                     aria-label={`Abrir Instagram ${INSTAGRAM_HANDLE}`}
-                    className="group/instagram inline-flex min-h-12 items-center gap-3 rounded-xl border border-white/15 bg-[#171717]/95 px-4 py-2.5 shadow-[0_10px_30px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.04)] transition-all hover:-translate-y-0.5 hover:border-[#d4af37]/65 hover:bg-[#1c1a14] hover:shadow-[0_15px_35px_rgba(0,0,0,0.5),0_0_25px_rgba(212,175,55,0.08)]"
+                    className="group/instagram inline-flex min-h-12 min-w-0 flex-1 items-center gap-3 rounded-xl border border-white/15 bg-[#171717]/95 px-3 py-2.5 shadow-[0_10px_30px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.04)] transition-all hover:-translate-y-0.5 hover:border-[#d4af37]/65 hover:bg-[#1c1a14] hover:shadow-[0_15px_35px_rgba(0,0,0,0.5),0_0_25px_rgba(212,175,55,0.08)] sm:flex-none sm:px-4"
                     href={INSTAGRAM_URL}
                     rel="noreferrer"
                     target="_blank"
                   >
                     <InstagramIcon />
-                    <span className="text-xs font-black tracking-[0.04em] text-[#d4af37] transition-colors group-hover/instagram:text-[#f3e5ab] sm:text-sm">
+                    <span className="truncate text-[0.7rem] font-black tracking-[0.02em] text-[#d4af37] transition-colors group-hover/instagram:text-[#f3e5ab] sm:text-sm sm:tracking-[0.04em]">
                       {INSTAGRAM_HANDLE}
                     </span>
                   </a>
-                  <span className="flex h-20 w-20 shrink-0 flex-col items-center justify-center rounded-full border border-[#d4af37]/55 bg-[#0b0b0b]/90 px-1 text-center font-['Teko'] text-[0.72rem] font-bold uppercase leading-[0.88] tracking-[0.03em] text-[#e5c44f] shadow-[0_10px_24px_rgba(0,0,0,0.48)]">
+                  <span className="flex h-16 w-16 shrink-0 flex-col items-center justify-center rounded-full border border-[#d4af37]/55 bg-[#0b0b0b]/90 px-1 text-center font-['Teko'] text-[0.62rem] font-bold uppercase leading-[0.88] tracking-[0.02em] text-[#e5c44f] shadow-[0_10px_24px_rgba(0,0,0,0.48)] sm:h-20 sm:w-20 sm:text-[0.72rem] sm:tracking-[0.03em]">
                     <span>A melhor</span>
                     <span>da cidade</span>
                   </span>
