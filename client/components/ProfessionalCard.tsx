@@ -27,7 +27,7 @@ export function ProfessionalCard({ index, professional }: ProfessionalCardProps)
       className={`group relative z-0 w-full max-w-[20rem] border bg-[#141414] transition-[width,background-color,border-color,box-shadow,filter] duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:z-10 sm:w-[min(var(--professional-card-width),calc(100vw-3rem))] sm:max-w-none ${open ? `z-30 border-[#e2bd3d] bg-[#080808] shadow-[0_85px_190px_rgba(0,0,0,1),0_35px_90px_rgba(0,0,0,1),0_0_0_1px_rgba(226,189,61,0.48),0_0_105px_rgba(212,175,55,0.25)] ${tabletAlignment} ${desktopAlignment}` : "border-white/15 shadow-[0_18px_45px_rgba(0,0,0,0.32)] hover:border-[#d4af37]/65 hover:shadow-[0_28px_75px_rgba(0,0,0,0.72)]"}`}
       onPointerLeave={() => setTilt(restingTilt)}
       onPointerMove={(event) => {
-        if (event.pointerType === "touch") return;
+        if (event.pointerType === "touch" || open) return;
         const rect = event.currentTarget.getBoundingClientRect();
         const px = (event.clientX - rect.left) / rect.width;
         const py = (event.clientY - rect.top) / rect.height;
@@ -43,7 +43,7 @@ export function ProfessionalCard({ index, professional }: ProfessionalCardProps)
         "--professional-card-width": open ? "36rem" : "20rem",
         transform: open
           ? "translateY(-10px)"
-          : `perspective(1000px) scale(${scale}) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
+          : `scale(${scale})`,
         transformOrigin: "center",
         filter: open ? "drop-shadow(0 32px 30px rgba(0, 0, 0, 0.82))" : "none",
         transition: open
@@ -71,13 +71,16 @@ export function ProfessionalCard({ index, professional }: ProfessionalCardProps)
         <button
           aria-expanded={open}
           className="block w-full shrink-0 cursor-pointer text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d4af37] sm:w-80"
-          onClick={() => setOpen((value) => !value)}
+          onClick={() => {
+            setTilt(restingTilt);
+            setOpen((value) => !value);
+          }}
           type="button"
         >
-          <div className="relative aspect-square overflow-hidden bg-[#0d0d0d]">
+          <div className="relative aspect-square overflow-hidden bg-[#141414]">
             <img
               alt={`Professor ${professional.name}, ${professional.specialty}`}
-              className="h-full w-full object-contain object-center transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+              className="h-full w-full object-cover object-top mix-blend-screen transition-transform duration-700 ease-out group-hover:scale-[1.025]"
               loading="lazy"
               src={professional.image}
             />

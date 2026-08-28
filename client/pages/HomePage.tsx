@@ -2,11 +2,11 @@ import { ModalityCard } from "../components/ModalityCard";
 import { PageLayout } from "../components/PageLayout";
 import { ProfessionalCard } from "../components/ProfessionalCard";
 import { SectionHeading } from "../components/SectionHeading";
+import { SpaceContact } from "../components/SpaceContact";
 import { StoreShowcase } from "../components/StoreShowcase";
 import { TEAM_ALMEIDA_FIGHT_EMBLEM_DATA_URL } from "../data/emblem";
-import { INSTAGRAM_APP_ICON_DATA_URL, QUALITY_SEAL_DATA_URL } from "../data/heroAssets";
 import { modalities, professionals } from "../data/modalities";
-import { INSTAGRAM_HANDLE, INSTAGRAM_URL, PHONE_DISPLAY, WHATSAPP_URL } from "../data/site";
+import { INSTAGRAM_HANDLE, INSTAGRAM_URL, WHATSAPP_URL } from "../data/site";
 import { usePageMeta } from "../hooks/usePageMeta";
 
 const schedule = [
@@ -41,6 +41,18 @@ const schedule = [
 ] as const;
 
 const values = ["Disciplina", "Foco", "Respeito", "Superação", "Academia Almeida Fight"] as const;
+
+function InstagramIcon() {
+  return (
+    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-[0.55rem] bg-[radial-gradient(circle_at_32%_102%,#ffd600_0%,#ff7a00_28%,#ff0169_52%,#d300c5_72%,#7638fa_100%)] shadow-[0_4px_12px_rgba(211,0,197,0.25)]">
+      <svg aria-hidden="true" className="h-[1.35rem] w-[1.35rem]" fill="none" viewBox="0 0 24 24">
+        <rect height="18" rx="5.2" stroke="white" strokeWidth="2.1" width="18" x="3" y="3" />
+        <circle cx="12" cy="12" r="4.2" stroke="white" strokeWidth="2.1" />
+        <circle cx="17.25" cy="6.75" fill="white" r="1.25" />
+      </svg>
+    </span>
+  );
+}
 
 export function HomePage() {
   usePageMeta(
@@ -98,7 +110,6 @@ export function HomePage() {
                 </p>
 
                 <div className="mt-5 flex flex-wrap items-center gap-3">
-                  <img alt="O melhor da cidade" className="h-[4.7rem] w-[4.7rem] shrink-0 object-contain drop-shadow-[0_12px_20px_rgba(0,0,0,0.5)] sm:h-[5.1rem] sm:w-[5.1rem]" src={QUALITY_SEAL_DATA_URL} />
                   <a
                     aria-label={`Abrir Instagram ${INSTAGRAM_HANDLE}`}
                     className="group/instagram inline-flex min-h-12 items-center gap-3 rounded-xl border border-white/15 bg-[#171717]/95 px-4 py-2.5 shadow-[0_10px_30px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.04)] transition-all hover:-translate-y-0.5 hover:border-[#d4af37]/65 hover:bg-[#1c1a14] hover:shadow-[0_15px_35px_rgba(0,0,0,0.5),0_0_25px_rgba(212,175,55,0.08)]"
@@ -106,11 +117,14 @@ export function HomePage() {
                     rel="noreferrer"
                     target="_blank"
                   >
-                    <img alt="" aria-hidden="true" className="h-7 w-7 shrink-0 object-contain" src={INSTAGRAM_APP_ICON_DATA_URL} />
+                    <InstagramIcon />
                     <span className="text-xs font-black tracking-[0.04em] text-[#d4af37] transition-colors group-hover/instagram:text-[#f3e5ab] sm:text-sm">
                       {INSTAGRAM_HANDLE}
                     </span>
                   </a>
+                  <span className="flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center rounded-full border border-[#d4af37]/55 bg-[#0b0b0b]/90 p-2 text-center font-['Teko'] text-sm font-bold uppercase leading-[0.82] tracking-[0.04em] text-[#e5c44f] shadow-[0_10px_24px_rgba(0,0,0,0.48)]">
+                    O melhor<br />da cidade
+                  </span>
                 </div>
 
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:mt-6">
@@ -273,33 +287,7 @@ export function HomePage() {
           </div>
         </section>
 
-        <section className="scroll-mt-20 bg-[#171717] py-20 sm:py-28" id="contato">
-          <div className="mx-auto max-w-5xl px-5 text-center sm:px-8">
-            <p className="text-[0.67rem] font-black uppercase tracking-[0.3em] text-[#d4af37]">Seu primeiro passo começa agora</p>
-            <h2 className="mt-4 font-['Teko'] text-[clamp(3.5rem,9vw,7.5rem)] font-bold uppercase leading-[0.8]">
-              Você está pronto para superar seus limites?
-            </h2>
-            <p className="mx-auto mt-7 max-w-2xl text-base leading-7 text-white/55">
-              Fale com nossa equipe, encontre a turma ideal e venha viver a experiência Almeida Fight.
-            </p>
-            <a
-              className="mt-6 inline-block text-sm font-bold tracking-[0.08em] text-[#d4af37] transition-colors hover:text-[#f3e5ab]"
-              href={WHATSAPP_URL}
-              rel="noreferrer"
-              target="_blank"
-            >
-              {PHONE_DISPLAY}
-            </a>
-            <a
-              className="mx-auto mt-6 flex min-h-14 w-fit items-center justify-center bg-[#d4af37] px-8 text-xs font-black uppercase tracking-[0.15em] text-[#0d0d0d] transition-colors hover:bg-[#f3e5ab] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f3e5ab]"
-              href={WHATSAPP_URL}
-              rel="noreferrer"
-              target="_blank"
-            >
-              Conversar no WhatsApp
-            </a>
-          </div>
-        </section>
+        <SpaceContact />
       </main>
     </PageLayout>
   );
