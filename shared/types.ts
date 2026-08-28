@@ -5,6 +5,7 @@ export type Instructor = {
   specialty: string;
   schedule: string;
   image: string;
+  achievements: readonly string[];
 };
 
 export type Modality = {
