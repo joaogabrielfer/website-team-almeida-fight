@@ -20,6 +20,6 @@ export const navigation = [
   { label: "Modalidades", href: "/#modalidades" },
   { label: "Horários", href: "/#horarios" },
   { label: "Equipe", href: "/#equipe" },
-  { label: "Loja", href: "/#loja" },
+  { label: "Loja", href: "/loja" },
   { label: "Contato", href: "/#contato" },
 ] as const;

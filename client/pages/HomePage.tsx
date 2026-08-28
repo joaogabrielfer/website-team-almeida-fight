@@ -321,8 +321,8 @@ export function HomePage() {
                 title="Dentro e fora do treino"
                 description="Uniformes, luvas e acessórios selecionados para acompanhar sua rotina de combate. Consulte disponibilidade diretamente com nossa equipe."
               />
-              <a className="mt-8 inline-flex items-center gap-3 text-xs font-black uppercase tracking-[0.16em] text-[#d4af37] transition-colors hover:text-[#f3e5ab]" href={WHATSAPP_URL} rel="noreferrer" target="_blank">
-                Consultar produtos <span aria-hidden="true">→</span>
+              <a className="mt-8 inline-flex items-center gap-3 text-xs font-black uppercase tracking-[0.16em] text-[#d4af37] transition-colors hover:text-[#f3e5ab]" href="/loja">
+                Conhecer a loja <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>

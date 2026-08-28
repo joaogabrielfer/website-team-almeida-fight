@@ -6,6 +6,7 @@ import { getModality } from "./data/modalities";
 import { HomePage } from "./pages/HomePage";
 import { ModalityPage } from "./pages/ModalityPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
+import { StorePage } from "./pages/StorePage";
 
 function GlobalBrowserSetup() {
   useEffect(() => {
@@ -64,6 +65,7 @@ export function App() {
       <GlobalBrowserSetup />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/loja" element={<StorePage />} />
         <Route path="/boxe" element={<ModalityPage modality={getModality("boxe")} />} />
         <Route path="/jiu-jitsu" element={<ModalityPage modality={getModality("jiu-jitsu")} />} />
         <Route path="/muay-thai" element={<ModalityPage modality={getModality("muay-thai")} />} />
