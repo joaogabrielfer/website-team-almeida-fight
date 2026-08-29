@@ -1,7 +1,3 @@
-# Lakebed local state and generated artifacts
-.lakebed/
-.env.lakebed.server
-
 # Environment files and secrets
 .env
 .env.*

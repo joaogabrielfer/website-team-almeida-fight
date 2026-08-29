@@ -1,4 +1,4 @@
-// Lakebed bundles TypeScript directly, so store imagery is embedded as optimized WebP data URLs.
+// Store imagery is embedded as optimized WebP data URLs.
 const webp = (encoded: string) => `data:image/webp;base64,${encoded}`;
 
 export const STORE_IMAGES = {
