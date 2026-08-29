@@ -1,5 +1,4 @@
 import type { ComponentChildren } from "preact";
-import { useLocation } from "lakebed/client";
 import { useEffect } from "preact/hooks";
 
 import { Footer } from "./Footer";
@@ -7,11 +6,9 @@ import { Header } from "./Header";
 import { WhatsAppButton } from "./WhatsAppButton";
 
 export function PageLayout({ children }: { children: ComponentChildren }) {
-  const location = useLocation();
-
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }, [location.pathname]);
+  }, []);
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#0d0d0d] font-['Montserrat'] text-white selection:bg-[#d4af37] selection:text-[#0d0d0d]">

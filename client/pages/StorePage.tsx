@@ -8,7 +8,7 @@ function WhatsAppMark() {
   return <span aria-hidden="true" className="text-base">◔</span>;
 }
 
-export function StorePage() {
+export function StorePage({ path }: { path?: string }) {
   usePageMeta("Almeida Fight Store | Uniformes e equipamentos oficiais", "Conheça as coleções de vestuário oficial Almeida Fight e compre diretamente pelo WhatsApp.");
 
   return (

@@ -1,5 +1,8 @@
-import { Route, Router, Routes } from "lakebed/client";
+import { render } from "preact";
+import Router from "preact-router";
 import { useEffect } from "preact/hooks";
+
+import "./styles.css";
 
 import { FAVICON_DATA_URL, FAVICON_TYPE } from "./data/favicon";
 import { getModality } from "./data/modalities";
@@ -61,21 +64,23 @@ function GlobalBrowserSetup() {
 
 export function App() {
   return (
-    <Router>
+    <>
       <GlobalBrowserSetup />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/loja" element={<StorePage />} />
-        <Route path="/boxe" element={<ModalityPage modality={getModality("boxe")} />} />
-        <Route path="/jiu-jitsu" element={<ModalityPage modality={getModality("jiu-jitsu")} />} />
-        <Route path="/muay-thai" element={<ModalityPage modality={getModality("muay-thai")} />} />
-        <Route path="/mma" element={<ModalityPage modality={getModality("mma")} />} />
-        <Route path="/boxe.html" element={<ModalityPage modality={getModality("boxe")} />} />
-        <Route path="/jiu-jitsu.html" element={<ModalityPage modality={getModality("jiu-jitsu")} />} />
-        <Route path="/muay-thai.html" element={<ModalityPage modality={getModality("muay-thai")} />} />
-        <Route path="/mma.html" element={<ModalityPage modality={getModality("mma")} />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </Router>
+      <Router>
+      <HomePage path="/" />
+      <StorePage path="/loja" />
+      <ModalityPage path="/boxe" modality={getModality("boxe")} />
+      <ModalityPage path="/jiu-jitsu" modality={getModality("jiu-jitsu")} />
+      <ModalityPage path="/muay-thai" modality={getModality("muay-thai")} />
+      <ModalityPage path="/mma" modality={getModality("mma")} />
+      <ModalityPage path="/boxe.html" modality={getModality("boxe")} />
+      <ModalityPage path="/jiu-jitsu.html" modality={getModality("jiu-jitsu")} />
+      <ModalityPage path="/muay-thai.html" modality={getModality("muay-thai")} />
+      <ModalityPage path="/mma.html" modality={getModality("mma")} />
+      <NotFoundPage default />
+      </Router>
+    </>
   );
 }
+
+render(<App />, document.getElementById("app")!);
