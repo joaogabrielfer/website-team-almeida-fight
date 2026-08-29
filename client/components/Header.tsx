@@ -1,4 +1,3 @@
-import { useLocation } from "lakebed/client";
 import { useEffect, useState } from "preact/hooks";
 
 import { navigation } from "../data/site";
@@ -17,13 +16,8 @@ function MenuIcon({ open }: { open: boolean }) {
 }
 
 export function Header() {
-  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [location.pathname]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 24);

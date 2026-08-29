@@ -56,7 +56,7 @@ function InstagramIcon() {
   );
 }
 
-export function HomePage() {
+export function HomePage({ path }: { path?: string }) {
   const [openProfessional, setOpenProfessional] = useState<string | null>(null);
 
   usePageMeta(

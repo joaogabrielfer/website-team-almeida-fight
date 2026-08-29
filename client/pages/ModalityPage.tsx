@@ -1,12 +1,10 @@
-import { Link } from "lakebed/client";
-
 import type { Modality } from "../../shared/types";
 import { PageLayout } from "../components/PageLayout";
 import { modalities } from "../data/modalities";
 import { WHATSAPP_URL } from "../data/site";
 import { usePageMeta } from "../hooks/usePageMeta";
 
-export function ModalityPage({ modality }: { modality: Modality }) {
+export function ModalityPage({ modality }: { modality: Modality; path?: string }) {
   usePageMeta(
     `${modality.label} | Academia Almeida Fight`,
     `${modality.label} com ${modality.instructor}. ${modality.focus}`,
@@ -22,9 +20,9 @@ export function ModalityPage({ modality }: { modality: Modality }) {
           </span>
 
           <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
-            <Link className="inline-flex items-center gap-2 text-[0.65rem] font-black uppercase tracking-[0.18em] text-white/45 transition-colors hover:text-[#d4af37]" to="/">
+            <a className="inline-flex items-center gap-2 text-[0.65rem] font-black uppercase tracking-[0.18em] text-white/45 transition-colors hover:text-[#d4af37]" href="/">
               <span aria-hidden="true">←</span> Voltar para o início
-            </Link>
+            </a>
             <div className="mt-14 max-w-5xl">
               <p className="text-[0.7rem] font-black uppercase tracking-[0.3em] text-[#d4af37]">{modality.label}</p>
               <h1 className="mt-3 font-['Teko'] text-[clamp(5rem,16vw,12rem)] font-bold uppercase leading-[0.72] tracking-[-0.035em] text-white">
@@ -120,9 +118,9 @@ export function ModalityPage({ modality }: { modality: Modality }) {
             <p className="text-[0.63rem] font-black uppercase tracking-[0.24em] text-white/35">Conheça também</p>
             <div className="mt-6 flex flex-wrap gap-3">
               {modalities.filter((item) => item.slug !== modality.slug).map((item) => (
-                <Link className="border border-white/15 px-5 py-3 font-['Teko'] text-xl font-semibold uppercase text-white transition-colors hover:border-[#d4af37] hover:text-[#d4af37]" key={item.slug} to={item.path}>
+                <a className="border border-white/15 px-5 py-3 font-['Teko'] text-xl font-semibold uppercase text-white transition-colors hover:border-[#d4af37] hover:text-[#d4af37]" key={item.slug} href={item.path}>
                   {item.name}
-                </Link>
+                </a>
               ))}
             </div>
           </div>

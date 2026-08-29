@@ -1,5 +1,3 @@
-import { Link } from "lakebed/client";
-
 import { TEAM_ALMEIDA_FIGHT_EMBLEM_DATA_URL } from "../data/emblem";
 
 type BrandProps = {
@@ -8,10 +6,10 @@ type BrandProps = {
 
 export function Brand({ compact = false }: BrandProps) {
   return (
-    <Link
+    <a
       aria-label="Academia Almeida Fight — página inicial"
       className="group inline-flex min-w-0 items-center gap-3 leading-none no-underline"
-      to="/"
+      href="/"
     >
       <img
         alt=""
@@ -28,6 +26,6 @@ export function Brand({ compact = false }: BrandProps) {
           Centro de treinamento
         </span>
       </span>
-    </Link>
+    </a>
   );
 }
