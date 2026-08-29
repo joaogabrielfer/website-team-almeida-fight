@@ -21,7 +21,7 @@ export function StorePage() {
               {storeItems.map((item) => (
                 <article className="group overflow-hidden border border-white/10 bg-[#141414] transition-all duration-300 hover:-translate-y-1 hover:border-[#d4af37]/55 hover:shadow-[0_22px_55px_rgba(0,0,0,0.4)]" key={item.id}>
                   <div className="relative aspect-[4/5] overflow-hidden bg-[#0b0b0b]" style={{ backgroundImage: `url(${STORE_BACKDROP_DATA_URL})`, backgroundPosition: "center", backgroundSize: "cover" }}>
-                    <img alt={item.name} className="h-full w-full object-contain p-3 transition-transform duration-700 group-hover:scale-[1.025]" src={item.image} />
+                    <img alt={item.name} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]" src={item.image} />
                     <span className="absolute left-4 top-4 border border-[#d4af37]/50 bg-[#0d0d0d]/90 px-2.5 py-1 text-[0.56rem] font-black uppercase tracking-[0.13em] text-[#f3e5ab]">{item.collection}</span>
                   </div>
                   <div className="p-5 sm:p-6">
@@ -45,7 +45,7 @@ export function StorePage() {
               {storeSets.map((set) => (
                 <article className="overflow-hidden border border-[#d4af37]/25 bg-[#0d0d0d]" key={set.name}>
                   <div className="grid aspect-[16/8] grid-cols-2 bg-[#0b0b0b]" style={{ backgroundImage: `url(${STORE_BACKDROP_DATA_URL})`, backgroundPosition: "center", backgroundSize: "cover" }}>
-                    {set.images.map((image, index) => <img alt={`${set.name} — ${index === 0 ? "camisa" : "bermuda"}`} className="h-full w-full object-contain p-2" key={image} src={image} />)}
+                    {set.images.map((image, index) => <img alt={`${set.name} — ${index === 0 ? "camisa" : "bermuda"}`} className="h-full w-full object-contain" key={image} src={image} />)}
                   </div>
                   <div className="p-6">
                     <p className="text-[0.6rem] font-black uppercase tracking-[0.2em] text-[#d4af37]">{set.collection}</p>
