@@ -1,3 +1,5 @@
+import { useState } from "preact/hooks";
+
 import { ModalityCard } from "../components/ModalityCard";
 import { PageLayout } from "../components/PageLayout";
 import { ProfessionalCard } from "../components/ProfessionalCard";
@@ -55,6 +57,8 @@ function InstagramIcon() {
 }
 
 export function HomePage() {
+  const [openProfessional, setOpenProfessional] = useState<string | null>(null);
+
   usePageMeta(
     "Academia Almeida Fight | Disciplina, foco e superação",
     "Treinamento de Boxe, Jiu-Jitsu, Muay Thai, Kickboxing e MMA com a equipe Almeida Fight.",
@@ -306,7 +310,13 @@ export function HomePage() {
             />
             <div className="mx-auto mt-12 grid max-w-6xl justify-items-center gap-7 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3">
               {professionals.map((professional, index) => (
-                <ProfessionalCard index={index} key={professional.name} professional={professional} />
+                <ProfessionalCard
+                  index={index}
+                  key={professional.name}
+                  onToggle={() => setOpenProfessional((current) => current === professional.name ? null : professional.name)}
+                  open={openProfessional === professional.name}
+                  professional={professional}
+                />
               ))}
             </div>
           </div>
@@ -318,11 +328,11 @@ export function HomePage() {
             <div>
               <SectionHeading
                 eyebrow="Almeida Fight Store"
-                title="Dentro e fora do treino"
-                description="Uniformes, luvas e acessórios selecionados para acompanhar sua rotina de combate. Consulte disponibilidade diretamente com nossa equipe."
+                title="Uniformes oficiais"
+                description="Camisas, bermudas, short de Muay Thai e conjuntos da equipe. Escolha sua peça e compre diretamente pelo WhatsApp."
               />
-              <a className="mt-8 inline-flex items-center gap-3 text-xs font-black uppercase tracking-[0.16em] text-[#d4af37] transition-colors hover:text-[#f3e5ab]" href={WHATSAPP_URL} rel="noreferrer" target="_blank">
-                Consultar produtos <span aria-hidden="true">→</span>
+              <a className="mt-8 inline-flex items-center gap-3 text-xs font-black uppercase tracking-[0.16em] text-[#d4af37] transition-colors hover:text-[#f3e5ab]" href="/loja">
+                Ver produtos e preços <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>

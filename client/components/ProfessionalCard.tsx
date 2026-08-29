@@ -4,13 +4,14 @@ import type { Instructor } from "../../shared/types";
 
 type ProfessionalCardProps = {
   index: number;
+  open: boolean;
+  onToggle: () => void;
   professional: Instructor;
 };
 
 const restingTilt = { x: 0, y: 0, spotX: "50%", spotY: "50%", hovering: false };
 
-export function ProfessionalCard({ index, professional }: ProfessionalCardProps) {
-  const [open, setOpen] = useState(false);
+export function ProfessionalCard({ index, onToggle, open, professional }: ProfessionalCardProps) {
   const [tilt, setTilt] = useState(restingTilt);
 
   const tabletAlignment = index % 2 === 0 ? "sm:justify-self-start" : "sm:justify-self-end";
@@ -70,7 +71,7 @@ export function ProfessionalCard({ index, professional }: ProfessionalCardProps)
           className="block w-full shrink-0 cursor-pointer text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d4af37] sm:w-80"
           onClick={() => {
             setTilt(restingTilt);
-            setOpen((value) => !value);
+            onToggle();
           }}
           type="button"
         >

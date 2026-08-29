@@ -44,6 +44,13 @@ jobs:
             exit 1
           fi
 
+      - name: Verify Lakebed artifact size
+        run: |
+          npx --yes lakebed@0.0.29 build . --target anonymous --out /tmp/lakebed-development.json --json
+          artifact_bytes=$(wc -c < /tmp/lakebed-development.json)
+          echo "Lakebed artifact: ${artifact_bytes} bytes"
+          test "$artifact_bytes" -lt 2097152
+
       - name: Deploy to Lakebed
         env:
           LAKEBED_TOKEN: ${{ secrets.LAKEBED_DEV_TOKEN }}

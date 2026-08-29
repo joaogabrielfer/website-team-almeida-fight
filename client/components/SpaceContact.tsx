@@ -73,7 +73,7 @@ export function SpaceContact() {
           <div className="relative min-h-[23rem] bg-[#171717]">
             <iframe
               allowFullScreen
-              className="absolute inset-0 h-full w-full grayscale-[0.9] contrast-[1.08] opacity-90"
+              className="absolute inset-0 h-full w-full contrast-[1.03] saturate-[1.2]"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               src={GOOGLE_MAPS_EMBED_URL}
