@@ -2,7 +2,7 @@
 
 Site institucional da Team Almeida Fight, academia de artes marciais com modalidades de Boxe, Jiu-Jitsu, Muay Thai e MMA. O projeto apresenta a equipe, horários, modalidades, loja e formas de contato para agendamento de aula experimental.
 
-**Site:** será publicado em `*.pages.dev` pelo Cloudflare Pages.
+**Site:** [almeida-fight.pages.dev](https://almeida-fight.pages.dev/)
 
 ## Tecnologias
 
