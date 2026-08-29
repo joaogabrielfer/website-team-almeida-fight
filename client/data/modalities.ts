@@ -1,11 +1,11 @@
 import type { Instructor, Modality } from "../../shared/types";
-import { INSTRUCTOR_IMAGES } from "./instructorImages";
+import { UPSCALED_INSTRUCTOR_IMAGES } from "./upscaledInstructorImages";
 
 const thiagoAlmeida: Instructor = {
   name: "Thiago Almeida",
   specialty: "Muay Thai + Kickboxing · MMA",
   schedule: "Muay Thai + Kickboxing: seg., qua. e sex. · 8h, 10h, 15h (exclusivo) e 17h30; ter. e qui. · 19h e 20h · MMA: seg., qua. e sex. · 11h; ter. e qui. · 10h e 20h",
-  image: INSTRUCTOR_IMAGES.thiagoAlmeida,
+  image: UPSCALED_INSTRUCTOR_IMAGES.thiagoAlmeida,
   achievements: [
     "5x campeão de Muay Thai",
     "Campeão regional de Kickboxing",
@@ -18,7 +18,7 @@ const ismaelNinja: Instructor = {
   name: "Ismael Ninja",
   specialty: "Boxe",
   schedule: "Segunda, quarta e sexta · 19h",
-  image: INSTRUCTOR_IMAGES.ismaelNinja,
+  image: UPSCALED_INSTRUCTOR_IMAGES.ismaelNinja,
   achievements: ["10 anos de Boxe", "10 vitórias", "3x campeão regional de Boxe"],
 };
 
@@ -26,7 +26,7 @@ const cesarAugusto: Instructor = {
   name: "Cesar Augusto",
   specialty: "Boxe",
   schedule: "Terça e quinta · 15h",
-  image: INSTRUCTOR_IMAGES.cesarAugusto,
+  image: UPSCALED_INSTRUCTOR_IMAGES.cesarAugusto,
   achievements: [
     "Medalhista de Boxe no Campeonato Brasileiro",
     "Campeão pernambucano de Boxe",
@@ -37,7 +37,7 @@ const williamGomes: Instructor = {
   name: "William Gomes",
   specialty: "Jiu-Jitsu",
   schedule: "Segunda, quarta e sexta · 07h e 16h",
-  image: INSTRUCTOR_IMAGES.williamGomes,
+  image: UPSCALED_INSTRUCTOR_IMAGES.williamGomes,
   achievements: [
     "15 anos de Jiu-Jitsu",
     "2 anos de faixa preta",
@@ -49,7 +49,7 @@ const italoFeijo: Instructor = {
   name: "Ítalo Feijó",
   specialty: "Jiu-Jitsu",
   schedule: "Segunda, quarta e sexta · 20h",
-  image: INSTRUCTOR_IMAGES.italoFeijo,
+  image: UPSCALED_INSTRUCTOR_IMAGES.italoFeijo,
   achievements: [
     "16 anos de Jiu-Jitsu",
     "5 anos de faixa preta",
@@ -62,7 +62,7 @@ const caioHenrique: Instructor = {
   name: "Caio Henrique",
   specialty: "Jiu-Jitsu",
   schedule: "Terça e quinta · 08h e 16h",
-  image: INSTRUCTOR_IMAGES.caioHenrique,
+  image: UPSCALED_INSTRUCTOR_IMAGES.caioHenrique,
   achievements: [
     "11 anos de Jiu-Jitsu",
     "Experiência em campeonatos estaduais e interestaduais",
