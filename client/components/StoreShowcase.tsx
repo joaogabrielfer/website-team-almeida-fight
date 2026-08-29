@@ -10,12 +10,12 @@ export function StoreShowcase() {
       style={{ backgroundImage: `url(${STORE_BACKDROP_DATA_URL})`, backgroundPosition: "center", backgroundSize: "cover" }}
     >
       <div className="absolute left-0 top-0 z-10 h-1 w-32 bg-[#d4af37]" />
-      <img alt="Camisa oficial preta Almeida Fight" className="absolute inset-0 h-full w-full object-contain sm:hidden" src={STORE_IMAGES.officialShirt} />
+      <img alt="Camisa oficial preta Almeida Fight" className="absolute inset-0 h-full w-full object-contain sm:hidden" src={STORE_IMAGES.officialShirtNew} />
       <div className="absolute inset-0 hidden grid-cols-[1.14fr_0.86fr] gap-px bg-black/25 sm:grid">
-        <img alt="Camisa oficial preta Almeida Fight" className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-[1.025]" src={STORE_IMAGES.officialShirt} />
+        <img alt="Camisa oficial preta Almeida Fight" className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-[1.025]" src={STORE_IMAGES.officialShirtNew} />
         <div className="grid grid-rows-2 gap-px">
           <img alt="Short de Muay Thai Almeida Fight" className="h-full w-full object-contain transition-transform duration-700 delay-75 group-hover:scale-[1.035]" src={STORE_IMAGES.muayThaiShorts} />
-          <img alt="Camisa oficial branca Almeida Fight" className="h-full w-full object-contain transition-transform duration-700 delay-100 group-hover:scale-[1.035]" src={STORE_IMAGES.personalizedShirt} />
+          <img alt="Camisa ELITE branca Almeida Fight" className="h-full w-full object-contain transition-transform duration-700 delay-100 group-hover:scale-[1.035]" src={STORE_IMAGES.eliteShirt} />
         </div>
       </div>
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.5),transparent_65%),linear-gradient(0deg,rgba(0,0,0,0.65),transparent_45%)]" />
