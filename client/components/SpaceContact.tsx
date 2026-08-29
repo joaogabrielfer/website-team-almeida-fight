@@ -9,7 +9,7 @@ import {
 } from "../data/site";
 
 const spacePhotos = [
-  { src: SPACE_IMAGES[0], alt: "Imagem ilustrativa da área principal de treino" },
+  { src: "/images/upscaled/space/1.png", alt: "Imagem ilustrativa da área principal de treino" },
   { src: SPACE_IMAGES[1], alt: "Imagem ilustrativa do ringue e equipamentos" },
   { src: SPACE_IMAGES[2], alt: "Imagem ilustrativa do tatame da academia" },
 ] as const;
