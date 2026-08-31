@@ -19,6 +19,28 @@ export const storeItems: StoreItem[] = [
 
 export const storeSets = [
   {
+    collection: "Personalizado",
+    name: "Conjunto Personalizado Preto",
+    description: "Conjunto preto com seu nome. A personalização é combinada pelo WhatsApp.",
+    price: 370,
+    images: [STORE_IMAGES.personalizedBlackShirt, STORE_IMAGES.personalizedBlackShorts],
+    pieces: [
+      { id: "camisa-personalizada-preta", collection: "Personalizado preto", name: "Camisa personalizada preta", description: "Camisa preta com seu nome. Personalização via WhatsApp.", price: 170, image: STORE_IMAGES.personalizedBlackShirt },
+      { id: "short-personalizado-preto", collection: "Personalizado preto", name: "Short personalizado preto", description: "Short preto com seu nome. Personalização via WhatsApp.", price: 240, image: STORE_IMAGES.personalizedBlackShorts },
+    ],
+  },
+  {
+    collection: "Personalizado",
+    name: "Conjunto Personalizado Branco",
+    description: "Conjunto branco com seu nome. A personalização é combinada pelo WhatsApp.",
+    price: 370,
+    images: [STORE_IMAGES.personalizedWhiteShirt, STORE_IMAGES.personalizedWhiteShorts],
+    pieces: [
+      { id: "camisa-personalizada-branca", collection: "Personalizado branco", name: "Camisa personalizada branca", description: "Camisa branca com seu nome. Personalização via WhatsApp.", price: 170, image: STORE_IMAGES.personalizedWhiteShirt },
+      { id: "short-personalizado-branco", collection: "Personalizado branco", name: "Short personalizado branco", description: "Short branco com seu nome. Personalização via WhatsApp.", price: 240, image: STORE_IMAGES.personalizedWhiteShorts },
+    ],
+  },
+  {
     collection: "Edição exclusiva",
     name: "Conjunto Exclusivo ELITE",
     description: "Camisa e bermuda brancas da linha ELITE.",
