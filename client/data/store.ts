@@ -40,6 +40,17 @@ export const storeSets = [
       { id: "bermuda-oficial", collection: "Padrão oficial", name: "Bermuda oficial", description: "Bermuda oficial de treino com cós elástico.", price: 140, image: STORE_IMAGES.officialShortsNew },
     ],
   },
+  {
+    collection: "Compressão",
+    name: "Conjunto Compressão",
+    description: "Camisa e short de compressão para suporte e mobilidade no treino.",
+    price: 275,
+    images: [STORE_IMAGES.compressionShirtNew, STORE_IMAGES.compressionShortsNew],
+    pieces: [
+      { id: "camisa-compressao", collection: "Compressão", name: "Camisa de compressão", description: "Camisa de compressão Team Almeida Fight.", price: 165, image: STORE_IMAGES.compressionShirtNew },
+      { id: "short-compressao", collection: "Compressão", name: "Short de compressão", description: "Short de compressão Team Almeida Fight.", price: 150, image: STORE_IMAGES.compressionShortsNew },
+    ],
+  },
 ] as const;
 
 export const priceLabel = (price: number) =>

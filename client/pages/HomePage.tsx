@@ -15,7 +15,7 @@ const schedule = [
   {
     modality: "Muay Thai + Kickboxing",
     classes: [
-      { days: "Segunda, quarta e sexta", times: ["08h", "10h", "15h"], exclusiveTime: "15h", instructor: null },
+      { days: "Segunda, quarta e sexta", times: ["08h", "10h", "15h", "17h30"], exclusiveTime: "15h", instructor: null },
       { days: "Terça e quinta", times: ["19h", "20h"], exclusiveTime: null, instructor: null },
     ],
   },
