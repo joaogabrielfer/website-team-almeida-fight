@@ -1,4 +1,5 @@
-import { SPACE_IMAGES } from "../data/spaceImages";
+// TODO: Reativar esta seção quando as imagens finais do espaço estiverem prontas.
+// import { SPACE_IMAGES } from "../data/spaceImages";
 import {
   ACADEMY_ADDRESS,
   GOOGLE_MAPS_DIRECTIONS_URL,
@@ -8,11 +9,12 @@ import {
   WHATSAPP_URL,
 } from "../data/site";
 
-const spacePhotos = [
-  { src: "/images/upscaled/space/1.png", alt: "Imagem ilustrativa da área principal de treino" },
-  { src: SPACE_IMAGES[1], alt: "Imagem ilustrativa do ringue e equipamentos" },
-  { src: SPACE_IMAGES[2], alt: "Imagem ilustrativa do tatame da academia" },
-] as const;
+// TODO: Reativar esta seção quando as imagens finais do espaço estiverem prontas.
+// const spacePhotos = [
+//   { src: "/images/upscaled/space/1.png", alt: "Imagem ilustrativa da área principal de treino" },
+//   { src: SPACE_IMAGES[1], alt: "Imagem ilustrativa do ringue e equipamentos" },
+//   { src: SPACE_IMAGES[2], alt: "Imagem ilustrativa do tatame da academia" },
+// ] as const;
 
 function GoogleMapsIcon() {
   return (
@@ -43,26 +45,29 @@ export function SpaceContact() {
   return (
     <section className="scroll-mt-20 border-y border-white/5 bg-[#111111] py-20 sm:py-28" id="contato">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-[0.65rem] font-black uppercase tracking-[0.28em] text-[#d4af37]">Conheça o espaço</p>
-            <h2 className="mt-3 font-['Teko'] text-[clamp(3.4rem,7vw,6.5rem)] font-bold uppercase leading-[0.82]">
-              Onde o treino acontece
-            </h2>
+        {/*
+          TODO: Reativar esta seção quando as imagens finais do espaço estiverem prontas.
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-[0.65rem] font-black uppercase tracking-[0.28em] text-[#d4af37]">Conheça o espaço</p>
+              <h2 className="mt-3 font-['Teko'] text-[clamp(3.4rem,7vw,6.5rem)] font-bold uppercase leading-[0.82]">
+                Onde o treino acontece
+              </h2>
+            </div>
+            <span className="w-fit border-l border-[#d4af37]/55 pl-3 text-[0.58rem] font-bold uppercase tracking-[0.16em] text-white/35">
+              Imagens ilustrativas
+            </span>
           </div>
-          <span className="w-fit border-l border-[#d4af37]/55 pl-3 text-[0.58rem] font-bold uppercase tracking-[0.16em] text-white/35">
-            Imagens ilustrativas
-          </span>
-        </div>
 
-        <div className="mt-10 grid gap-3 sm:grid-cols-3">
-          {spacePhotos.map((photo) => (
-            <figure className="group relative min-h-60 overflow-hidden border border-white/10 bg-black sm:h-72" key={photo.alt}>
-              <img alt={photo.alt} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]" loading="lazy" src={photo.src} />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-            </figure>
-          ))}
-        </div>
+          <div className="mt-10 grid gap-3 sm:grid-cols-3">
+            {spacePhotos.map((photo) => (
+              <figure className="group relative min-h-60 overflow-hidden border border-white/10 bg-black sm:h-72" key={photo.alt}>
+                <img alt={photo.alt} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]" loading="lazy" src={photo.src} />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              </figure>
+            ))}
+          </div>
+        */}
 
         <div className="mt-16 border-t border-white/10 pt-10">
           <p className="text-[0.62rem] font-black uppercase tracking-[0.25em] text-[#d4af37]">Rotas</p>
