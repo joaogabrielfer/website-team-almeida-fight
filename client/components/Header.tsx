@@ -19,6 +19,28 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const navigateToSection = (event: MouseEvent, href: string) => {
+    if (!href.startsWith("/#")) return;
+
+    event.preventDefault();
+    setMenuOpen(false);
+
+    if (window.location.pathname !== "/") {
+      window.location.assign(href);
+      return;
+    }
+
+    const sectionId = href.slice(2);
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+
+    window.history.pushState(null, "", href);
+    section.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      block: "start",
+    });
+  };
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 24);
     handleScroll();
@@ -58,6 +80,7 @@ export function Header() {
                 <a
                   className="relative py-3 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-white/70 transition-colors after:absolute after:inset-x-0 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-[#d4af37] after:transition-transform hover:text-white hover:after:scale-x-100 focus-visible:text-[#f3e5ab] focus-visible:outline-none focus-visible:after:scale-x-100"
                   href={item.href}
+                  onClick={(event) => navigateToSection(event, item.href)}
                 >
                   {item.label}
                 </a>
@@ -91,7 +114,10 @@ export function Header() {
                 <a
                   className="flex items-center justify-between border-b border-white/10 py-3.5 font-['Teko'] text-2xl font-semibold uppercase tracking-wide text-white transition-colors hover:border-[#d4af37]/50 hover:text-[#d4af37] focus-visible:outline-none focus-visible:text-[#f3e5ab]"
                   href={item.href}
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(event) => {
+                    navigateToSection(event, item.href);
+                    setMenuOpen(false);
+                  }}
                 >
                   {item.label}
                   <span className="font-['Montserrat'] text-[0.6rem] text-[#d4af37]/70">
