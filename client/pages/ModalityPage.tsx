@@ -49,7 +49,7 @@ export function ModalityPage({ modality }: { modality: Modality; path?: string }
                     <div className="relative aspect-[4/5] overflow-hidden bg-[#111111] p-2">
                       <img
                         alt={`Professor ${instructor.name}, ${instructor.specialty}`}
-                        className="h-full w-full object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.025]"
+                        className="h-full w-full translate-y-5 scale-[1.25] object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.28]"
                         loading="lazy"
                         src={instructor.image}
                       />
