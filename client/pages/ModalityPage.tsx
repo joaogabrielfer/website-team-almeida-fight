@@ -46,10 +46,10 @@ export function ModalityPage({ modality }: { modality: Modality; path?: string }
               <div className={`order-2 grid gap-5 ${modality.instructors.length > 1 ? "md:grid-cols-2 xl:grid-cols-3" : "max-w-md"} lg:col-span-2`}>
                 {modality.instructors.map((instructor) => (
                   <article className="group overflow-hidden border border-white/10 bg-[#171717]" key={instructor.name}>
-                    <div className="relative aspect-[4/5] overflow-hidden bg-[#111111]">
+                    <div className="relative aspect-[4/5] overflow-hidden bg-[#111111] p-2">
                       <img
                         alt={`Professor ${instructor.name}, ${instructor.specialty}`}
-                        className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.025]"
+                        className="h-full w-full object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.025]"
                         loading="lazy"
                         src={instructor.image}
                       />
