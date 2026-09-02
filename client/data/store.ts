@@ -25,8 +25,8 @@ export const storeSets = [
     price: 370,
     images: [STORE_IMAGES.personalizedBlackShirt, STORE_IMAGES.personalizedBlackShorts],
     pieces: [
-      { id: "camisa-personalizada-preta", collection: "Personalizado preto", name: "Camisa personalizada preta", description: "Camisa preta com seu nome. Personalização via WhatsApp.", price: 170, image: STORE_IMAGES.personalizedBlackShirt },
-      { id: "short-personalizado-preto", collection: "Personalizado preto", name: "Short personalizado preto", description: "Short preto com seu nome. Personalização via WhatsApp.", price: 240, image: STORE_IMAGES.personalizedBlackShorts },
+      { id: "camisa-personalizada-preta", collection: "Personalizado preto", name: "Camisa personalizada preta", description: "Camisa preta personalizada com o nome aplicado. Combine o seu nome pelo WhatsApp.", price: 170, image: STORE_IMAGES.personalizedBlackShirt, views: ["/images/store/personalizados/camisa-preta-frente.webp", "/images/store/personalizados/camisa-preta-costas.webp"] },
+      { id: "short-personalizado-preto", collection: "Personalizado preto", name: "Short personalizado preto", description: "Short preto personalizado com o nome aplicado. Combine o seu nome pelo WhatsApp.", price: 240, image: STORE_IMAGES.personalizedBlackShorts, views: ["/images/store/personalizados/short-preto-frente.webp", "/images/store/personalizados/short-preto-costas.webp"] },
     ],
   },
   {
@@ -36,8 +36,8 @@ export const storeSets = [
     price: 370,
     images: [STORE_IMAGES.personalizedWhiteShirt, STORE_IMAGES.personalizedWhiteShorts],
     pieces: [
-      { id: "camisa-personalizada-branca", collection: "Personalizado branco", name: "Camisa personalizada branca", description: "Camisa branca com seu nome. Personalização via WhatsApp.", price: 170, image: STORE_IMAGES.personalizedWhiteShirt },
-      { id: "short-personalizado-branco", collection: "Personalizado branco", name: "Short personalizado branco", description: "Short branco com seu nome. Personalização via WhatsApp.", price: 240, image: STORE_IMAGES.personalizedWhiteShorts },
+      { id: "camisa-personalizada-branca", collection: "Personalizado branco", name: "Camisa personalizada branca", description: "Camisa branca personalizada com o nome aplicado. Combine o seu nome pelo WhatsApp.", price: 170, image: STORE_IMAGES.personalizedWhiteShirt, views: ["/images/store/personalizados/camisa-branca-frente.webp", "/images/store/personalizados/camisa-branca-costas.webp"] },
+      { id: "short-personalizado-branco", collection: "Personalizado branco", name: "Short personalizado branco", description: "Short branco personalizado com o nome aplicado. Combine o seu nome pelo WhatsApp.", price: 240, image: STORE_IMAGES.personalizedWhiteShorts, views: ["/images/store/personalizados/short-branco-frente.webp", "/images/store/personalizados/short-branco-costas.webp"] },
     ],
   },
   {
