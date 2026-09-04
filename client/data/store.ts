@@ -57,7 +57,7 @@ export const storeSets = [
     name: "Conjunto Oficial Team Almeida Fight",
     description: "Camisa dry-fit e bermuda oficiais em preto.",
     price: 235,
-    images: ["/images/store/oficial/camisa-frente.webp", "/images/store/oficial/short-frente.webp"],
+    images: ["/images/store/oficial/camisa-frente-limpa.webp", "/images/store/oficial/short-frente.webp"],
     pieces: [
       { id: "camisa-oficial", collection: "Padrão oficial", name: "Camisa oficial", description: "Camisa dry-fit oficial Team Almeida Fight.", price: 120, image: "/images/store/oficial/camisa-frente-limpa.webp" },
       { id: "bermuda-oficial", collection: "Padrão oficial", name: "Bermuda oficial", description: "Bermuda oficial de treino com cós elástico.", price: 140, image: "/images/store/oficial/short-frente.webp", views: ["/images/store/oficial/short-frente.webp", "/images/store/oficial/short-costas.webp"] },
