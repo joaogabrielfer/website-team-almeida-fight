@@ -15,6 +15,7 @@ const buyLink = (product: string) =>
 
 export const storeItems: StoreItem[] = [
   { id: "short-muay-thai", collection: "Peças avulsas", name: "Short Muay Thai", description: "Corte tradicional, leve e livre para golpear.", price: 150, image: STORE_IMAGES.muayThaiShorts },
+  { id: "bolsa-team-almeida-fight", collection: "Peças avulsas", name: "Bolsa Team Almeida Fight", description: "Bolsa esportiva Team Almeida Fight para levar seus equipamentos de treino.", price: 300, image: "/images/store/bolsa-team-almeida-fight.webp" },
 ];
 
 export const storeSets = [
@@ -23,10 +24,10 @@ export const storeSets = [
     name: "Conjunto Personalizado Preto",
     description: "Conjunto preto com seu nome. A personalização é combinada pelo WhatsApp.",
     price: 370,
-    images: [STORE_IMAGES.personalizedBlackShirt, STORE_IMAGES.personalizedBlackShorts],
+    images: ["/images/store/personalizados/camisa-preta-frente.webp", "/images/store/personalizados/short-preto-frente.webp"],
     pieces: [
-      { id: "camisa-personalizada-preta", collection: "Personalizado preto", name: "Camisa personalizada preta", description: "Camisa preta com seu nome. Personalização via WhatsApp.", price: 170, image: STORE_IMAGES.personalizedBlackShirt },
-      { id: "short-personalizado-preto", collection: "Personalizado preto", name: "Short personalizado preto", description: "Short preto com seu nome. Personalização via WhatsApp.", price: 240, image: STORE_IMAGES.personalizedBlackShorts },
+      { id: "camisa-personalizada-preta", collection: "Personalizado preto", name: "Camisa personalizada preta", description: "Camisa preta personalizada com o nome aplicado. Combine o seu nome pelo WhatsApp.", price: 170, image: STORE_IMAGES.personalizedBlackShirt, views: ["/images/store/personalizados/camisa-preta-frente.webp", "/images/store/personalizados/camisa-preta-costas.webp"] },
+      { id: "short-personalizado-preto", collection: "Personalizado preto", name: "Short personalizado preto", description: "Short preto personalizado com o nome aplicado. Combine o seu nome pelo WhatsApp.", price: 240, image: STORE_IMAGES.personalizedBlackShorts, views: ["/images/store/personalizados/short-preto-frente.webp", "/images/store/personalizados/short-preto-costas.webp"] },
     ],
   },
   {
@@ -34,10 +35,10 @@ export const storeSets = [
     name: "Conjunto Personalizado Branco",
     description: "Conjunto branco com seu nome. A personalização é combinada pelo WhatsApp.",
     price: 370,
-    images: [STORE_IMAGES.personalizedWhiteShirt, STORE_IMAGES.personalizedWhiteShorts],
+    images: ["/images/store/personalizados/camisa-branca-frente.webp", "/images/store/personalizados/short-branco-frente.webp"],
     pieces: [
-      { id: "camisa-personalizada-branca", collection: "Personalizado branco", name: "Camisa personalizada branca", description: "Camisa branca com seu nome. Personalização via WhatsApp.", price: 170, image: STORE_IMAGES.personalizedWhiteShirt },
-      { id: "short-personalizado-branco", collection: "Personalizado branco", name: "Short personalizado branco", description: "Short branco com seu nome. Personalização via WhatsApp.", price: 240, image: STORE_IMAGES.personalizedWhiteShorts },
+      { id: "camisa-personalizada-branca", collection: "Personalizado branco", name: "Camisa personalizada branca", description: "Camisa branca personalizada com o nome aplicado. Combine o seu nome pelo WhatsApp.", price: 170, image: STORE_IMAGES.personalizedWhiteShirt, views: ["/images/store/personalizados/camisa-branca-frente.webp", "/images/store/personalizados/camisa-branca-costas.webp"] },
+      { id: "short-personalizado-branco", collection: "Personalizado branco", name: "Short personalizado branco", description: "Short branco personalizado com o nome aplicado. Combine o seu nome pelo WhatsApp.", price: 240, image: STORE_IMAGES.personalizedWhiteShorts, views: ["/images/store/personalizados/short-branco-frente.webp", "/images/store/personalizados/short-branco-costas.webp"] },
     ],
   },
   {
@@ -56,10 +57,10 @@ export const storeSets = [
     name: "Conjunto Oficial Team Almeida Fight",
     description: "Camisa dry-fit e bermuda oficiais em preto.",
     price: 235,
-    images: [STORE_IMAGES.officialShirtNew, STORE_IMAGES.officialShortsNew],
+    images: ["/images/store/oficial/camisa-frente-limpa.webp", "/images/store/oficial/short-frente.webp"],
     pieces: [
-      { id: "camisa-oficial", collection: "Padrão oficial", name: "Camisa oficial", description: "Camisa dry-fit oficial Team Almeida Fight.", price: 120, image: STORE_IMAGES.officialShirtNew },
-      { id: "bermuda-oficial", collection: "Padrão oficial", name: "Bermuda oficial", description: "Bermuda oficial de treino com cós elástico.", price: 140, image: STORE_IMAGES.officialShortsNew },
+      { id: "camisa-oficial", collection: "Padrão oficial", name: "Camisa oficial", description: "Camisa dry-fit oficial Team Almeida Fight.", price: 120, image: "/images/store/oficial/camisa-frente-limpa.webp" },
+      { id: "bermuda-oficial", collection: "Padrão oficial", name: "Bermuda oficial", description: "Bermuda oficial de treino com cós elástico.", price: 140, image: "/images/store/oficial/short-frente.webp", views: ["/images/store/oficial/short-frente.webp", "/images/store/oficial/short-costas.webp"] },
     ],
   },
   {
